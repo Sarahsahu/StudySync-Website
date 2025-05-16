@@ -1,0 +1,566 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    text-align: center;
+    background-color: white;
+}
+.header{
+    width: 70%; /*70% of body width*/
+    margin: 0 auto; /*top-bot= 0px| R-L= auto = eq margin from RL = centre placed*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem; /* all 4 sides */
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 1rem;/* Space between logo and name */
+}
+.Sname {
+
+    font-size: 2rem;
+    color: #000;
+    font-weight: bolder;
+}
+/* middle section */
+.tabs{
+    display: flex;
+    gap: 1rem;
+}
+a{
+    text-decoration: none;
+}
+.nav-link{
+    color:#707675;
+    font-size:1.125rem;
+    font-weight:600 ;
+    transition: color 0.2s; /*Property|timing function*/
+
+}
+.nav-link:hover{
+    color: rgb(47, 47, 124)
+}
+
+.btton {
+    border-radius: 0.375rem;
+    background-color: blue;
+    transition: background-color 0.2s, color 0.2s;
+    padding: 0.75rem 1.5rem;
+    
+}
+
+.btton a {
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Hover Effect for Button */
+.btton:hover {
+    background-color: rgb(59, 59, 145); /* Button background color change */
+}
+
+/* CONTENT PART */
+.content{
+width:100 vw;
+}
+.main_section{
+    width:70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.left{
+    padding-top: 10%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap:1.5rem;
+    text-align: left;
+    animation: slideFromLeft 1s ease forwards;
+}
+@keyframes slideFromLeft 
+{
+    0%  { 
+        opacity: 0;
+        transform:translateX(-100%)
+        }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+        }
+}
+.btn_grp{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+    justify-content: flex-start; /* align buttons to the left */
+}
+.intro{
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: rgb(54, 54, 185);
+}
+.title{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 2.3rem;
+    color: #333333;
+}
+.desc{
+    color: grey;
+    font-size:1.15rem;
+}
+.btn_grp{
+    margin-top: 5%;
+    display: flex;
+    text-align: center;
+    justify-content:flex-start;
+    
+}
+.start{
+    padding: 3px;
+    background-color: blue;
+    color:aliceblue;
+    border-radius: 5px;
+
+}
+.tour{
+    padding: 3px;
+    background-color:rgb(87, 83, 83);
+    color:aliceblue;
+    border-radius: 5px;
+
+}
+.right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.image {
+    width: 400px; /* Adjust size as needed */
+    height: 400px;
+    overflow: hidden;
+    border-radius: 0.625rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Makes sure image fills and crops */
+}
+/* RESPONSIVE  */
+@media (max-width: 768px) {
+    .main_section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+
+    .image {
+        width: 300px;
+        height: 300px;
+    }
+}
+@media (max-width: 1070px) {
+    .tabs, .contact-btn {
+        display: none;
+}
+
+}
+/* COMPANY SECTION */
+.company-container{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    animation: slideFromLeft 1s ease forwards ;
+}
+.company-grid{
+    padding: 1rem ;
+    width: 60%;
+    margin: 1.7rem auto;;
+    background-color: aqua;
+    display: grid;;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color:rgb(199, 199, 199);
+    gap: 1.5rem;
+    border-radius: 5px;
+   
+}
+@media (max-width: 840px) {
+    .company-grid
+    {
+        width: 100%;
+        max-width: 90%;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        align-items: center;
+        gap: 1rem;
+        padding: auto;
+    }
+
+}
+.company-logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+}
+.name{
+    font-size: 1rem;
+    text-align: center;
+}
+.logo{
+
+    height: 40px;
+}
+/* CARD SECTION */
+.outer{
+    background-color: #e7edeb;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+.cardTitle{
+    margin-top: 1rem;
+}
+.cardDesc{
+    width: 70%;
+}
+.cardGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2% 25%;
+    padding: 0.5rem;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    padding:0.7rem;
+    border-radius: 1rem;
+}
+.card:nth-child(1)
+{
+    background-color: #0078D4;
+}
+.card:nth-child(2)
+{
+    background-color:#E94E77;
+}
+.card:nth-child(3)
+{
+    background-color: #F4A300;
+}
+.card:nth-child(4)
+{
+    background-color: #00A99D;
+}
+.card:nth-child(5)
+{
+    background-color: #77B05D;
+}
+.card:nth-child(6)
+{
+    background-color: #5c5893;
+}
+.cardimg img{
+    height: 2.5rem;
+    width: 2.5rem;
+}
+.cardName{
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+.cardName h1{
+ color: white;
+ font-size: 1.2rem;
+}
+.cardName p{
+ color: white;
+}
+
+@media (max-width:768px) {
+    .cardGrid{
+        width:100%;
+        max-width: 90%;
+        grid-template-columns: 1fr;
+    }
+    
+}
+/* TESTIMONIAL */
+.test-container{
+padding: 2rem 15%;
+margin:0 auto;
+max-width: 1200px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.test-title{
+    font-size:1rem;
+    font-weight: bold;
+}
+.test-cards{
+    margin-top:1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    gap:2rem;
+    
+}
+.each-card{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap:1rem;
+    border: 1px solid rgb(110, 107, 107);
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease,box shadow 0.3s ease;
+    
+}
+.each-card:hover{
+ transform: scale(1.05);
+ box-shadow:0 2px 4px rgba(0, 0, 0, 0.2);
+ border: 1px solid blue;
+}
+.test-image img{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+}
+.test-name{
+    color: blue;
+    font-size:1.5rem;
+}
+.test-desig{
+    font-size: 1rem;
+}
+/* NEWSLETTER */
+
+.news-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0; /* Smaller top and bottom padding */
+}
+
+.news-content {
+    display: flex;
+    margin :0 15%;
+    width: 100%;
+    max-width: 1200px;
+    height: 250px; /* ✅ Fixed compact height (adjust this if needed) */
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+.news-left {
+    width: 50%;
+}
+.news-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.news-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px; /* Less padding, more compact */
+}
+.news-title {
+    font-size: 2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: left;
+     color: rgb(24, 24, 249);
+}
+.news-desc {
+    color: #555;
+    margin-bottom: 15px;
+    text-align: left;
+}
+.news-signup {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    
+}
+.news-email {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.news-button {
+    padding: 10px 20px;
+    background-color: #4f46e5;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.news-link{
+    color: blue;
+    text-decoration: underline;
+}
+@media (max-width: 975px) {
+    .news-left {
+        display: none;
+    }
+
+    .news-right {
+        position: static;
+        width: 100%;
+        background: #fff; /* White background */
+        color: #000; /* Normal dark text */
+        padding: 20px;
+        text-align: left;
+    }
+}
+
+/* FOOTER */
+.footer-container{
+   display: flex;
+   flex-direction: column;
+   margin: 0 auto;
+   padding: 0 auto;
+   background-color: white; 
+}
+.footer-content{
+    display: flex;
+    flex-direction: row;
+    padding: 2rem 6rem;
+    gap: 4rem ;
+    justify-content:space-between;
+}
+.footer-image{
+    width: 2rem;
+    height: 1.5rem;
+
+}
+.footer-left{
+width:35%;
+display: flex;
+flex-direction: column;
+padding: 1rem;
+gap:1.3rem;
+align-items: flex-start;
+}
+.social{
+    display: flex;
+    flex-direction: row;
+    gap:1rem;
+}
+.insta{
+    height: 1.5rem;
+    width: 1.5rem;
+}
+.footer-name{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+.logo-link{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+
+}
+.footer-name p{
+   font-size: 0.8rem;
+   color: #777; 
+   text-align: left;
+}
+.footer-right{
+    display: flex;
+    flex-direction: row;
+    gap:7rem;
+}
+.colm{
+display: flex;
+flex-direction: column;
+padding: 1rem 1rem;
+
+}
+.footer-heading{
+    font-size: 1.1rem;
+    font-weight: bold;
+    color:#333333 ;
+    margin-bottom:1.3rem ;
+}
+ul{
+    list-style-type: none;
+}
+.items{
+    color: #777;
+    font-size:0.8rem;
+}
+.footer-list{
+    display: flex;
+    flex-direction: column;
+    gap:1.3rem;
+}
+.footer-copyright{
+    color: gray;
+    font-size: 0.56;
+    padding-top: 1.1rem;
+    padding-bottom: 1.1rem;
+    margin-top: 1.5rem;
+    border-top: 1px solid #E5E7EB;
+}
+@media (max-width:1110px) {
+    .footer-content{
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-left{
+        padding-left: 5rem;
+    }
+}
